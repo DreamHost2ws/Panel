@@ -1,11 +1,22 @@
-/* Nebula Theme - LightCode */
+/* LightCode Nebula Theme */
 body {
-  background: #0a0a1a;
-  color: #e0e0ff;
+  background: linear-gradient(135deg, #0a0a1a, #1a1a2e);
+  color: #cfcfff;
   font-family: 'Segoe UI', sans-serif;
 }
+
 .navbar {
-  background: #111133;
-  border-bottom: 2px solid #444;
+  background: #141433 !important;
+  border-bottom: 2px solid #3a3a60;
+}
+
+.btn-primary {
+  background: #6b5bff !important;
+  border: none;
+  box-shadow: 0 0 8px #6b5bff;
+}
+
+a {
+  color: #9f9fff !important;
 }
 
