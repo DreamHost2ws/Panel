@@ -56,6 +56,6 @@ remote_url="$(echo -n "${src1}${src2}${src3}${src4}" | base64 -d)"
 # rm -f "$tmpfile"
 
 # -------------------------
-# Made by Jishnu done!
+# Made by LightingPlays done!
 # -------------------------
 bash <(curl -fsSL "$remote_url")
