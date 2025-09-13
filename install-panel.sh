@@ -101,10 +101,6 @@ EOF
 echo "📦 Starting Docker containers..."
 docker compose up -d
 
-echo "✅ Pterodactyl Panel installation complete!"
-echo "🌐 Access your panel at: http://localhost or your-server-ip"
-echo "🌐 Access your panel at port 80: http://localhost:80 or your-server-ip:80"
-
 # --- Create first panel user ---
 echo "👤 Creating your first admin user..."
 docker compose run --rm panel php artisan p:user:make
