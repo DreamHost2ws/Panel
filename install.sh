@@ -1,7 +1,17 @@
-bash -c '
-mkdir -p pterodactyl/panel &&
-cd pterodactyl/panel || exit &&
-cat <<EOF > docker-compose.yml
+#!/bin/bash
+# LightCode - Pterodactyl Panel Installer
+# Made by LP ❤️
+
+set -e
+
+echo "📦 Installing Pterodactyl Panel with Docker..."
+
+# Step 1: Create directory structure
+mkdir -p /opt/pterodactyl/panel
+cd /opt/pterodactyl/panel || exit 1
+
+# Step 2: Create docker-compose.yml
+cat <<'EOF' > docker-compose.yml
 version: "3.8"
 
 x-common:
@@ -73,6 +83,9 @@ networks:
       config:
         - subnet: 172.20.0.0/16
 EOF
-&& docker-compose up -d &&
-docker-compose run --rm panel php artisan p:user:make
-'
+
+# Step 3: Start containers
+docker compose up -d
+
+# Step 4: Create first user
+docker compose run --rm panel php artisan p:user:make
