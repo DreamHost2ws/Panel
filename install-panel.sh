@@ -22,7 +22,7 @@ echo -e "${NC}"
 
 echo -ne "${GRN}🔥 Please Subscribe \n"
 for i in {1..3}; do
-  echo -ne "${CYN}Subscribing To SanjitGaming"
+  echo -ne "${CYN}Subscribing To LightingPlays"
   for dot in {1..3}; do
     echo -n "."
     sleep 0.3
