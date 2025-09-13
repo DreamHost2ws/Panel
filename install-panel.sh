@@ -1,16 +1,29 @@
 #!/bin/bash
 # LightCode - Pterodactyl Panel Installer
+# Repo: DreamHost2ws/Panel
 # Made by LP ❤️
 
 set -e
 
-echo "📦 Installing Pterodactyl Panel with Docker..."
+echo "🚀 Starting Pterodactyl Panel installation..."
 
-# Step 1: Create directory structure
+# --- Install Docker if missing ---
+if ! command -v docker &> /dev/null; then
+    echo "🐳 Installing Docker..."
+    apt update -y
+    apt install -y ca-certificates curl gnupg lsb-release
+    mkdir -p /etc/apt/keyrings
+    curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+    apt update -y
+    apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+fi
+
+# --- Create directory structure ---
 mkdir -p /opt/pterodactyl/panel
 cd /opt/pterodactyl/panel || exit 1
 
-# Step 2: Create docker-compose.yml
+# --- Create docker-compose.yml ---
 cat <<'EOF' > docker-compose.yml
 version: "3.8"
 
@@ -84,12 +97,16 @@ networks:
         - subnet: 172.20.0.0/16
 EOF
 
-# Step 3: Start containers
+# --- Start containers ---
+echo "📦 Starting Docker containers..."
 docker compose up -d
 
 echo "✅ Pterodactyl Panel installation complete!"
 echo "🌐 Access your panel at: http://localhost or your-server-ip"
 echo "🌐 Access your panel at port 80: http://localhost:80 or your-server-ip:80"
 
-# Step 4: Create first user
+# --- Create first panel user ---
+echo "👤 Creating your first admin user..."
 docker compose run --rm panel php artisan p:user:make
+
+echo "✅ Installation complete! Open your panel at: https://pterodactyl.example.com"
