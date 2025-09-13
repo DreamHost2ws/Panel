@@ -3,15 +3,14 @@
 This is the **LightCode Installer** for [Pterodactyl](https://pterodactyl.io) Panel and Wings.  
 It includes a simple interactive menu with the following options:
 
-Install Panel + Wings
+1.Install Panel + Wings
 
-Install Theme (NookTheme)
+2.Install Theme (NookTheme)
 
-Uninstall Everything
+3.Uninstall Everything (not working ) under maintanenis
 
-Exit
+4.Exit
 
-yaml
 Copy code
 
 ---
