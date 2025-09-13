@@ -1,7 +1,6 @@
 #!/bin/bash
-# Made by Joy+jtg
 
-echo "📦 Installing Pterodactyl wings with Docker..."
+echo "LightingPlays | Installing Pterodactyl wings with Docker..."
 
 # Step 1: Create directory structure
 mkdir -p pterodactyl/wings
