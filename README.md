@@ -18,7 +18,7 @@ Copy code
 ## 🚀 Quick Install
 
 Run the following command to launch the installer:
-
+## Copyright Polise
 If You Want to make video make but have to give my name LightingPlays In Video Description Write My Name U have to
 Give me Credit.
 
