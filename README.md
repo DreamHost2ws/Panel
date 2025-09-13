@@ -19,5 +19,8 @@ Copy code
 
 Run the following command to launch the installer:
 
+If You Want to make video make but have to give my name LightingPlays In Video Description Write My Name U have to
+Give me Credit.
+
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/DreamHost2ws/Panel/main/bootstrap.sh)
