@@ -21,9 +21,9 @@ echo "╚══════╝╚═╝       ╚═════   ╚═══�
 echo -e "${NC}"
 
 echo ""
-echo "=============================="
+echo "======================================"
 echo "   LightCode Pterodactyl Installer"
-echo "=============================="
+echo "======================================"
 echo ""
 echo "1) Install Panel + Wing"
 echo "2) Install Theme"
